@@ -30,12 +30,11 @@
     </properties>
 
     <dependencies>
-        <!-- REST Assured -->
+        <!-- REST Assured (compile scope — used in src/main/specs) -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${rest-assured.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -63,7 +62,6 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
             <version>${allure.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- Jackson -->
