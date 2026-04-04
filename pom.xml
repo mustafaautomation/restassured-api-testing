@@ -19,7 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <rest-assured.version>5.5.0</rest-assured.version>
-        <junit.version>5.11.3</junit.version>
+        <junit.version>5.14.3</junit.version>
         <allure.version>2.29.1</allure.version>
         <jackson.version>2.18.2</jackson.version>
         <assertj.version>3.26.3</assertj.version>
