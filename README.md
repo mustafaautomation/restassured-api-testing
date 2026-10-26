@@ -5,7 +5,7 @@
 [![Java](https://img.shields.io/badge/Java-17-ED8B00.svg?logo=openjdk&logoColor=white)](https://openjdk.org)
 [![REST Assured](https://img.shields.io/badge/REST_Assured-5.5-43B02A.svg)](https://rest-assured.io)
 
-Enterprise API testing framework built with REST Assured, JUnit 5, and Allure reporting. Demonstrates request/response specs, POJO serialization, JSON schema validation, and structured test architecture.
+API testing framework (portfolio project) built with REST Assured, JUnit 5 and Allure reporting, run against the public reqres.in API. Demonstrates request/response specs, POJO serialization, JSON schema validation, and structured test architecture.
 
 ---
 
@@ -16,7 +16,9 @@ Enterprise API testing framework built with REST Assured, JUnit 5, and Allure re
 | Users | 7 | CRUD operations, pagination, 404 handling |
 | Auth | 4 | Login, registration, validation errors |
 | Schema | 1 | JSON schema validation |
-| **Total** | **12** | |
+| Resources | 4 | Resource list and single-resource endpoints |
+| Response validation | 12 | Response structure (parameterized), headers, PATCH/PUT fields |
+| **Total** | **28** | |
 
 ---
 
@@ -120,7 +122,9 @@ restassured-api-testing/
 │       │   ├── BaseTest.java            # Common setup
 │       │   ├── UsersTest.java           # 7 user CRUD tests
 │       │   ├── AuthTest.java            # 4 auth tests
-│       │   └── SchemaTest.java          # JSON schema validation
+│       │   ├── SchemaTest.java          # JSON schema validation
+│       │   ├── ResourcesTest.java       # 4 resource tests
+│       │   └── ResponseValidationTest.java # 12 response checks
 │       └── resources/schemas/
 │           └── user-list.json           # JSON schema for user list
 ├── pom.xml
