@@ -7,19 +7,26 @@ import static org.hamcrest.Matchers.lessThan;
 
 public final class ResponseSpecs {
 
+    /** Default response-time budget for the success specs. */
+    public static final long DEFAULT_MAX_MILLIS = 5000L;
+
     private ResponseSpecs() {}
 
     public static ResponseSpecification successSpec() {
+        return successSpec(DEFAULT_MAX_MILLIS);
+    }
+
+    public static ResponseSpecification successSpec(long maxMillis) {
         return new ResponseSpecBuilder()
                 .expectStatusCode(200)
-                .expectResponseTime(lessThan(5000L))
+                .expectResponseTime(lessThan(maxMillis))
                 .build();
     }
 
     public static ResponseSpecification createdSpec() {
         return new ResponseSpecBuilder()
                 .expectStatusCode(201)
-                .expectResponseTime(lessThan(5000L))
+                .expectResponseTime(lessThan(DEFAULT_MAX_MILLIS))
                 .build();
     }
 
