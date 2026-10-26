@@ -10,17 +10,18 @@ public final class RequestSpecs {
 
     private RequestSpecs() {}
 
-    public static RequestSpecification baseSpec() {
-        return new RequestSpecBuilder()
-                .setBaseUri(ApiConfig.getBaseUrl())
+    public static RequestSpecification baseSpec(String baseUri) {
+        RequestSpecBuilder builder = new RequestSpecBuilder()
+                .setBaseUri(baseUri)
                 .setContentType(ContentType.JSON)
-                .addFilter(new AllureRestAssured())
-                .build();
+                .addFilter(new AllureRestAssured());
+        ApiConfig.getApiKey().ifPresent(key -> builder.addHeader("x-api-key", key));
+        return builder.build();
     }
 
-    public static RequestSpecification authSpec(String token) {
+    public static RequestSpecification authSpec(String baseUri, String token) {
         return new RequestSpecBuilder()
-                .addRequestSpecification(baseSpec())
+                .addRequestSpecification(baseSpec(baseUri))
                 .addHeader("Authorization", "Bearer " + token)
                 .build();
     }
